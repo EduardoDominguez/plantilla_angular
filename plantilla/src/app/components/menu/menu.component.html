@@ -1,0 +1,84 @@
+<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive, collapsed: collapsed}">
+    <div class="list-group">
+        <div class="nested-menu">
+            <a class="list-group-item" (click)="addExpandClass('programa_gobierno')" title="Programaci&oacute;n">
+                &nbsp;<i class="fab fa-accusoft"></i> &nbsp;
+                <span>Programa de gobierno</span>
+                <i class="fas angle-expand"
+                    [ngClass]="{'fa-angle-right': showMenu != 'programa_gobierno', 'fa-angle-down': showMenu === 'programa_gobierno'}"></i>
+            </a>
+            <li class="nested" [class.expand]="showMenu === 'programa_gobierno'">
+                <ul class="submenu">
+                    <li>
+                        <a [routerLink]="['/nodos']" [routerLinkActive]="['router-link-active']"
+                            matTooltip="Consulta nodos" [matTooltipPosition]='globales.POSITION_OPTIONS[5]'>
+                            <i class="fas fa-share-alt"></i>
+                            <span>Nodos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/programa_gobierno/estrategias']" [routerLinkActive]="['router-link-active']"
+                            matTooltip="Consulta estrategias" [matTooltipPosition]='globales.POSITION_OPTIONS[5]'>
+                            <i class="fas fa-clipboard-list"></i>
+                            <span>Estrategias</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/programa_gobierno/programas']" [routerLinkActive]="['router-link-active']"
+                            matTooltip="Consulta programas" [matTooltipPosition]='globales.POSITION_OPTIONS[5]'>
+                            <i class="fas fa-tasks"></i>
+                            <span>Programas</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/programa_gobierno/menu_tematico']"
+                            [routerLinkActive]="['router-link-active']"
+                            matTooltip="Consulta men&uacute; tem&aacute;tico" [matTooltipPosition]='globales.POSITION_OPTIONS[5]'>
+                            <i class="fas fa-bezier-curve"></i>
+                            <span>Men&uacute; tem&aacute;tico</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/programa_gobierno/etapa_vida']" [routerLinkActive]="['router-link-active']"
+                            matTooltip="Consulta etapas de vida" [matTooltipPosition]='globales.POSITION_OPTIONS[5]'>
+                            <i class="fas fa-child"></i>
+                            <span>Etapa de vida</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </div>
+
+        <div class="nested-menu">
+            <a class="list-group-item" (click)="addExpandClass('configuracion')" title="Configuraci&oacute;n">
+                &nbsp;<i class="fas fa-cogs"></i> &nbsp;
+                <span>Configuraci&oacute;n</span>
+                <i class="fas angle-expand"
+                    [ngClass]="{'fa-angle-right': showMenu != 'configuracion', 'fa-angle-down': showMenu === 'configuracion'}"></i>
+            </a>
+            <li class="nested" [class.expand]="showMenu === 'configuracion'">
+                <ul class="submenu">
+                    <li>
+                        <a [routerLink]="['/configuracion/mensaje']" [routerLinkActive]="['router-link-active']"
+                            matTooltip="Cambiar mensaje de bienvenida" [matTooltipPosition]='globales.POSITION_OPTIONS[5]'>
+                            <i class="fas fa-envelope-open-text"></i>
+                            <span>Mensaje</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/configuracion/programas-frecuentes']" [routerLinkActive]="['router-link-active']"
+                            matTooltip="Programas frecuentes" [matTooltipPosition]='globales.POSITION_OPTIONS[5]'>
+                            <i class="fas fa-tasks"></i>
+                            <span>Programas frecuentes</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </div>
+        <a [routerLink]="['/ayuda']" [routerLinkActive]="['router-link-active']" (click)="addExpandClass('0')"
+            class="list-group-item"   matTooltip="Ayuda" [matTooltipPosition]='globales.POSITION_OPTIONS[5]'>
+            &nbsp;<i class="fas fa-question"></i> &nbsp;
+            <span>Ayuda</span>
+        </a>
+    </div>
+</nav>
